@@ -14,6 +14,10 @@
 
 AGameJamCharacter::AGameJamCharacter()
 {
+	//bReplicates = true;
+	
+	HandlingTarget.Set(1.0,0.0,0.0);
+	
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
 
@@ -132,3 +136,11 @@ void AGameJamCharacter::MoveRight(float Value)
 		AddMovementInput(Direction, Value);
 	}
 }
+
+void AGameJamCharacter::GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & OutLifetimeProps) const 
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+	DOREPLIFETIME(AGameJamCharacter, HandlingTarget);
+	
+};
+

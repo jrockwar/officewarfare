@@ -9,6 +9,9 @@ ACodeWeapon::ACodeWeapon()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	HandlingArc    = 5.0;
+	HandlingWeight = 1.0;
+
 }
 
 // Called when the game starts or when spawned

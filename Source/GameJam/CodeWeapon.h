@@ -13,10 +13,13 @@ class GAMEJAM_API ACodeWeapon : public AActor
 	
 public:	
 	
-	//UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Office War")
-	//;
-	
+	/*The arc limit for handling 'bounce'.  */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Office War")
+	float  HandlingArc;
 
+	/*This is the interp speed for weapon handling. Higher values make the weapon 'bounce' faster.  */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Office War")
+	float  HandlingWeight;
 
 	// Sets default values for this actor's properties
 	ACodeWeapon();
@@ -26,6 +29,9 @@ public:
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Office War")
 	void  SecondaryFunction();
+
+
+
 
 
 protected:

@@ -2,6 +2,8 @@
 
 #pragma once
 
+#include "Net/UnrealNetwork.h"
+
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "GameJamCharacter.generated.h"
@@ -54,6 +56,10 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
 	float BaseLookUpRate;
 
+	/*Once the item has reached it's handling vector. Regen a new handling target*/
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Office War")
+	void  ReboundHandling();
+
 protected:
 
 	/** Resets HMD orientation in VR. */
@@ -93,5 +99,14 @@ public:
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
 	/** Returns FollowCamera subobject **/
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
+
+protected:
+
+	/*Working var for the Direction target vector for floating weapon aim.  This is the interp target for weapon handling.  */
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Replicated, Category = "Office War")
+	FVector  HandlingTarget;
+
+	//HandlingTargetUpdated
+
 };
 
