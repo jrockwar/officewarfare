@@ -2,6 +2,9 @@
 
 #pragma once
 
+#include "CodePlayerController.h"
+#include "Net/UnrealNetwork.h"
+
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
 #include "GameJamGameMode.generated.h"
@@ -16,10 +19,16 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Office War")
 	int TurnTime;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Office War")
+	TArray<ACodePlayerController*> RegisteredPlayers;
+
 	AGameJamGameMode();
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Office War")
 	void  NextCharacter();
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Office War")
+	void  StartRound();
 
 };
 
