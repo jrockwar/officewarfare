@@ -46,8 +46,4 @@ public:
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Office War")
 	void  NextCharacter();
 
-	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Office War")
-	void  LockAndLoad();
-
-
 };
