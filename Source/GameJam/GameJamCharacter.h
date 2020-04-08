@@ -44,6 +44,9 @@ class AGameJamCharacter : public ACharacter
 public:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Office War")
+	float  HP;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Office War")
 	FCharStats  CharacterStats;
 
 	AGameJamCharacter();
