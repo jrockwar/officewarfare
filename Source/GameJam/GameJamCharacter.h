@@ -53,7 +53,7 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Replicated, Category = "Office War")
 	TArray<ACodeWeapon*>  Inventory;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Replicated, Category = "Office War")
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Office War")
 	int  Equipped;
 
 
