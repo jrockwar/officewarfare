@@ -3,6 +3,7 @@
 #pragma once
 
 #include "Net/UnrealNetwork.h"
+#include "CodeWeapon.h"
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
@@ -48,6 +49,13 @@ public:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Office War")
 	FCharStats  CharacterStats;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Replicated, Category = "Office War")
+	TArray<ACodeWeapon*>  Inventory;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Replicated, Category = "Office War")
+	int  Equipped;
+
 
 	AGameJamCharacter();
 
