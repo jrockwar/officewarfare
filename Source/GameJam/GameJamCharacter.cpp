@@ -141,6 +141,8 @@ void AGameJamCharacter::GetLifetimeReplicatedProps(TArray< FLifetimeProperty > &
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 	DOREPLIFETIME(AGameJamCharacter, HandlingTarget);
+	DOREPLIFETIME(AGameJamCharacter, Inventory);
+	//DOREPLIFETIME(AGameJamCharacter, Equipped);
 	
 };
 
